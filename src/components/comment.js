@@ -2,26 +2,57 @@ import React from "react";
 
 class Comment extends React.Component {
     constructor(props){
+        console.log("contructor")
         super(props);
         this.state = {
-            isEditing : false
+            isEditing : false,
+            title: props.comment.title,
+            desc: props.comment.desc
         }
         this.handleEditClick = () => {
             this.setState({
                 isEditing : true
             })
         }
+        this.handleSaveClick = () => {
+            this.setState({
+                isEditing : false
+            })
+        }
+        this.handleTitleOnchange = (e) => {
+            this.setState({
+                title : e.target.value
+            })
+        }
+        this.handleDescOnchange = (e) => {
+            this.setState({
+                desc : e.target.value
+            })
+        }
     }
     render(){
-        return (
-            <div>
-                <h3>{this.props.comment.title}</h3>
-                <p>{this.props.comment.desc}</p>
+        if (!this.state.isEditing) {
+            return (
                 <div>
-                    <input type="button" value="Edit" onClick={this.handleEditClick}/>
+                    <h3>{this.state.title}</h3>
+                    <p>{this.state.desc}</p>
+                    <div>
+                        <input type="button" value="Edit" onClick={this.handleEditClick}/>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div>
+                    <input type="text" placeholder="title" value={this.state.title} onChange={this.handleTitleOnchange}/><br/>
+                    <textarea placeholder="description" value={this.state.desc} onChange={this.handleDescOnchange}></textarea>
+                    <div>
+                        <input type="button" value="Save" onClick={this.handleSaveClick}/>
+                    </div>
+                </div>
+            )
+        }
+        
     }
 }
 

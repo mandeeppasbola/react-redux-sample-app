@@ -12,7 +12,7 @@ const App = () => (
         <div className="comments">
             {
                 CommentsData.map((comment) => (
-                    <Comment comment={comment}/>
+                    <Comment comment={comment} key={comment.id}/>
                 ))
             }
         </div>
