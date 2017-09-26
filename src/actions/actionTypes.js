@@ -1,0 +1,3 @@
+export const LOAD_ALL_COMMNENTS = "LOAD_ALL_COMMNENTS";
+export const ADD_COMMENT = "ADD_COMMENT";
+export const REMOVE_COMMENT = "REMOVE_COMMENT";

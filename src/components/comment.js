@@ -2,7 +2,6 @@ import React from "react";
 
 class Comment extends React.Component {
     constructor(props){
-        console.log("contructor")
         super(props);
         this.state = {
             isEditing : false,
