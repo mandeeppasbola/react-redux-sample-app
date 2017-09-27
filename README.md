@@ -35,6 +35,7 @@ store >> provider >> container >> component
 
 http://redux.js.org/ 
 https://www.draw.io/?title=redux-explained.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fmandeeppasbola%2Freact-redux-sample-app%2Fmaster%2Fredux-explained.xml
+https://github.com/reactjs/react-redux/blob/master/docs/api.md
 
 Immutability
 https://facebook.github.io/immutable-js/

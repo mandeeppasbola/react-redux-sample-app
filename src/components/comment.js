@@ -18,6 +18,9 @@ class Comment extends React.Component {
                 isEditing : false
             })
         }
+        this.handleDeleteClick = () => {
+            props.actions.removeComment();
+        }
         this.handleTitleOnchange = (e) => {
             this.setState({
                 title : e.target.value
@@ -37,6 +40,7 @@ class Comment extends React.Component {
                     <p>{this.state.desc}</p>
                     <div>
                         <input type="button" value="Edit" onClick={this.handleEditClick}/>
+                        <input type="button" value="Delete" onClick={this.handleDeleteClick}/>
                     </div>
                 </div>
             )

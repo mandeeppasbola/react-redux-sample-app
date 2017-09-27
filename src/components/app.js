@@ -1,9 +1,12 @@
 import React from "react";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
 import AddComponent from "./add-component";
 import Comment from "./comment";
-import CommentsData from "../data/comments";
+import * as commentActions from '../actions/commentActions'
 
-const App = () => (
+const App = ({comments, actions}) => (
     <div>
         <h1>This is comment manager app</h1>
         <div className="add-comment">
@@ -11,12 +14,24 @@ const App = () => (
         </div>
         <div className="comments">
             {
-                CommentsData.map((comment) => (
-                    <Comment comment={comment} key={comment.id}/>
+                comments.map((comment) => (
+                    <Comment comment={comment} key={comment.id} actions={actions}/>
                 ))
             }
         </div>
     </div>
 )
 
-export default App;
+const mapStateToProps = (state) => (
+    {
+        comments : state.comments
+    }
+)
+
+const mapDispatchToProps = (dispatch) => (
+    {
+        actions : bindActionCreators(commentActions, dispatch) 
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
