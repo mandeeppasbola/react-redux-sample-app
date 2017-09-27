@@ -15,7 +15,7 @@ npm run start
 Understanding component lifecycle<br/>
 https://plnkr.co/edit/0cN0tu?p=preview<br/><br/>
 
-Deep dive
+Deep dive<br/>
 https://jsfiddle.net/meetmonsters/ac4jk4ao/2/  (componentDidMount(),componentDidUpdate())<br/>
 https://jsfiddle.net/meetmonsters/07cL79tj/1/  (React.PureComponent and React.Component)<br/>
 https://jsfiddle.net/meetmonsters/jp5kykun/2/  (shouldCompoentUpdate() and React.PureComponent v/s React.Component)<br/>
